@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* CSS variables for reusablity across all files (including above imported) */
+:root {
+--bricolage: "Bricolage Grotesque", sans-serif;
+--dm-sans: "DM Sans", sans-serif;
+
+--blue-500: hsl(233, 67%, 56%);
+--blue-700: hsl(248, 70%, 36%);
+
+--orange-500: hsl(28, 100%, 52%);
+
+--neutral-900: hsl(243, 96%, 9%);
+--neutral-800: hsl(243, 27%, 20%);
+--neutral-700: hsl(243, 23%, 24%);
+--neutral-600: hsl(243, 23%, 30%);
+--neutral-300: hsl(240, 6%, 70%);
+--neutral-200: hsl(250, 6%, 84%);
+--neutral-0: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: var(--neutral-900);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+}
+
+.logo img{
+  width: 150px;
+}
+
+menu {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+menu img {
+  width: 15px;
+}
+
+menu p {
+  color: white;
+  font-family: var(--dm-sans);
+}
