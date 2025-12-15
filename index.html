@@ -29,9 +29,12 @@
     <h2>How's the sky looking today?</h2>
 
     <div class="search-container">
-      <img src="assets/images/icon-search.svg" alt="search"><input type="search" name="" id=""
-        placeholder="Search for a place...">
-      <button class="search-btn">Search</button>
+      <form action="/search" method="get">
+        <div class="search-box">
+          <input type="search" name="location" placeholder="Search for a place...">
+        </div>
+        <button type="submit" class="search-btn">Search</button>
+      </form>
     </div>
   </section>
 
