@@ -45,7 +45,7 @@ button {
 
 img {
   display: block;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .flex-center {
@@ -169,11 +169,20 @@ menu p {
 
   border-radius: 1rem;
 
-  /* margin: 1rem auto; */
+  margin: 1rem auto;
   padding: 2rem 3rem;
 
   background-image: url("/assets/images/bg-today-small.svg");
   background-repeat: no-repeat;
+  background-size: cover;
+
+  max-width:480px;
+}
+
+.weather-widget__card .header {
+  font-family: var(--dm-sans);
+
+  text-align: center;
 }
 
 .main-display  {
@@ -183,12 +192,13 @@ menu p {
 
 .main-display .icon {
   display: flex;
+  align-items: center;
 }
 
 .main-display .icon img {
   width: 50%;
 
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .main-display span {
