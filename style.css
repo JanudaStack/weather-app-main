@@ -176,7 +176,7 @@ menu p {
   background-repeat: no-repeat;
   background-size: cover;
 
-  max-width:968px;
+  max-width: 968px;
 }
 
 .weather-widget__card .header {
@@ -185,7 +185,7 @@ menu p {
   text-align: center;
 }
 
-.main-display  {
+.main-display {
   display: flex;
   justify-content: center;
 }
@@ -213,7 +213,7 @@ menu p {
   gap: 1rem;
 
   max-width: 968px;
-  
+
   margin: 0 auto;
 }
 
@@ -222,7 +222,7 @@ menu p {
 
   padding: 1rem;
 
-  border-radius: .6rem;
+  border-radius: 0.6rem;
 
   box-shadow: 0px -1px 0px var(--neutral-700);
 
@@ -266,4 +266,5 @@ menu p {
   .data-card {
     width: 100%;
   }
+
 }
