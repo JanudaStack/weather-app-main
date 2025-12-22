@@ -45,6 +45,7 @@ button {
 
 img {
   display: block;
+  width: 10px;
   /* width: 100%; */
 }
 
@@ -88,6 +89,9 @@ menu p {
 /* Search section */
 
 .search-section {
+  max-width: 1078px;
+
+  margin: 0 auto;
 }
 
 .search-section h2 {
@@ -159,23 +163,25 @@ menu p {
   font-weight: 500;
 }
 
+/* Weather Widget section */
 .weather-widget {
   padding: 0 5%;
 }
 
 .weather-widget__card {
-  /* display: flex; */
-  justify-content: center;
+  /* background-color: red; */
 
+  background-image: url('assets/images/bg-today-small.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
   border-radius: 1rem;
 
-  margin: 1rem auto;
+  margin: 1.5rem auto;
   padding: 2rem 3rem;
 
-  background-image: url("/assets/images/bg-today-small.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-
+  width: 100%;
   max-width: 968px;
 }
 
@@ -188,23 +194,27 @@ menu p {
 .main-display {
   display: flex;
   justify-content: center;
-}
-
-.main-display .icon {
-  display: flex;
   align-items: center;
 }
 
-.main-display .icon img {
-  width: 50%;
+/* .main-display .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+} */
 
-  /* margin: 0 auto; */
+.main-display .icon img {
+  width: 120px;
+
+  margin: 0 auto;
 }
 
 .main-display span {
-  font-size: 5rem;
+  font-size: 4rem;
   font-family: var(--dm-sans);
   font-style: italic;
+  margin-right: 4rem;
 }
 
 .data-grid {
