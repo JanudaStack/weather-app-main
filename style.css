@@ -64,7 +64,7 @@ img {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 1rem;
+  padding:2rem;
 }
 
 .logo img {
@@ -107,7 +107,10 @@ menu p {
   /* display: flex; */
   justify-content: center;
 
-  padding: 0 5%;
+  padding: 0 2rem;
+  margin: 0 auto; 
+
+  max-width: 800px;
 }
 
 .search-box {
@@ -165,7 +168,7 @@ menu p {
 
 /* Weather Widget section */
 .weather-widget {
-  padding: 0 5%;
+  padding: 0 2rem;
 }
 
 .weather-widget__card {
@@ -219,7 +222,7 @@ menu p {
 
 .data-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1rem;
 
   max-width: 800px;
@@ -258,7 +261,9 @@ menu p {
   border-radius: 1rem;
 
   padding: 1rem;
-  margin: 1.5rem 0;
+  margin: 1.5rem auto;
+
+  max-width: 800px;
 }
 
 .hourly-forecast__header {
@@ -274,15 +279,15 @@ menu p {
 .hourly-forecast__day-selector {
 }
 
-.hourly-forecast__day-selector select{
+.hourly-forecast__day-selector select {
   background-color: var(--neutral-700);
 
   font-family: var(--dm-sans);
 
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 
-  padding: .5rem;
+  padding: 0.5rem;
 
   cursor: pointer;
 }
@@ -309,7 +314,7 @@ menu p {
   width: 50px;
 }
 
-.forecast-row__time span{
+.forecast-row__time span {
 }
 
 .forecast-row__temp {
@@ -318,6 +323,60 @@ menu p {
   margin: 0 1rem 0 auto;
 }
 
+/* Daily forecast */
+.daily-forecast {
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  max-width: 800px;
+}
+
+.daily-forecast h2 {
+  font-family: var(--dm-sans);
+  font-weight: 500;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  justify-content: center;
+  gap: 1rem;
+
+  list-style: none;
+
+  margin: 1.5rem 0;
+}
+
+.forecast-card {
+  background-color: var(--neutral-800);
+
+  border-radius: 1rem;
+
+  padding: 0.5rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.forecast-card__day,
+.forecast-card__temp-range {
+  font-family: var(--dm-sans);
+}
+
+.forecast-card__temp-range {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.forecast-card__icon img {
+  width: 60px;
+}
+
+/* Media Query */
 @media (min-width: 768px) {
   form {
     display: flex;
@@ -334,6 +393,10 @@ menu p {
 
     padding: 1rem 1.5rem;
     margin: 0;
+  }
+
+  .search-container {
+    padding: 0;
   }
 
   .data-grid {
@@ -363,5 +426,10 @@ menu p {
 
   .main-display span {
     margin-right: 0;
+  }
+
+  /* Daily forecast */
+  .daily-forecast {
+    padding: 0;
   }
 }
