@@ -17,6 +17,8 @@
   --neutral-300: hsl(240, 6%, 70%);
   --neutral-200: hsl(250, 6%, 84%);
   --neutral-0: hsl(0, 0%, 100%);
+
+  --box-shadow: 0px -1px 0px var(--neutral-700);
 }
 
 * {
@@ -64,7 +66,7 @@ img {
 header {
   display: flex;
   justify-content: space-between;
-  padding:2rem;
+  padding: 2rem;
 }
 
 .logo img {
@@ -108,7 +110,7 @@ menu p {
   justify-content: center;
 
   padding: 0 2rem;
-  margin: 0 auto; 
+  margin: 0 auto;
 
   max-width: 800px;
 }
@@ -118,7 +120,7 @@ menu p {
 
   border-radius: 0.8rem;
 
-  padding: 1rem 1.5rem;
+  padding: 0 1.5rem;
 
   display: flex;
   gap: 0.8rem;
@@ -130,6 +132,8 @@ menu p {
   border: none;
 
   font-size: 1rem;
+
+  width: 100%;
 }
 
 .search-box input:focus {
@@ -348,6 +352,8 @@ menu p {
 }
 
 .forecast-card {
+  box-shadow: var(--box-shadow);
+
   background-color: var(--neutral-800);
 
   border-radius: 1rem;
