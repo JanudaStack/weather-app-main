@@ -171,18 +171,18 @@ menu p {
 .weather-widget__card {
   /* background-color: red; */
 
-  background-image: url('assets/images/bg-today-small.svg');
-  background-size: cover;
+  background-image: url("assets/images/bg-today-small.svg");
+  /* background-size: cover; */
   background-repeat: no-repeat;
   background-position: center;
-  
+
   border-radius: 1rem;
 
   margin: 1.5rem auto;
   padding: 2rem 3rem;
 
   width: 100%;
-  max-width: 968px;
+  max-width: 343px;
 }
 
 .weather-widget__card .header {
@@ -222,7 +222,7 @@ menu p {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 
-  max-width: 968px;
+  max-width: 800px;
 
   margin: 0 auto;
 }
@@ -249,6 +249,73 @@ menu p {
 .data-card .data-value {
   font-family: var(--dm-sans);
   font-size: 2rem;
+  font-weight: 300;
+}
+
+.hourly-forecast {
+  background-color: var(--neutral-800);
+
+  border-radius: 1rem;
+
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.hourly-forecast__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  font-family: var(--dm-sans);
+  font-size: 0.6rem;
+}
+
+.hourly-forecast__day-selector {
+}
+
+.hourly-forecast__day-selector select{
+  background-color: var(--neutral-700);
+
+  font-family: var(--dm-sans);
+
+  border: none;
+  border-radius: .5rem;
+
+  padding: .5rem;
+
+  cursor: pointer;
+}
+
+.hourly-forecast__list {
+}
+
+.forecast-row {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--neutral-700);
+
+  margin: 1rem 0;
+  /* padding: 0 1rem; */
+
+  border-radius: 0.5rem;
+}
+
+.forecast-row__icon img {
+  width: 50px;
+}
+
+.forecast-row__time span{
+}
+
+.forecast-row__temp {
+  font-style: var(--dm-sans);
+
+  margin: 0 1rem 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -277,4 +344,24 @@ menu p {
     width: 100%;
   }
 
+  .weather-widget__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-image: url("assets/images/bg-today-large.svg");
+    background-size: auto;
+    background-position: center;
+
+    height: 15rem;
+    max-width: 800px;
+  }
+
+  .weather-widget__card .header {
+    text-align: left;
+  }
+
+  .main-display span {
+    margin-right: 0;
+  }
 }
