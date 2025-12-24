@@ -88,6 +88,18 @@ menu p {
   font-family: var(--dm-sans);
 }
 
+.weather-widget__container {
+  grid-area: weather-widget;
+}
+
+.hourly-forecast {
+  grid-area: hourly-forecast;
+}
+
+.daily-forecast {
+  grid-area: daily-forecast;
+}
+
 /* Search section */
 
 .search-section {
@@ -120,7 +132,7 @@ menu p {
 
   border-radius: 0.8rem;
 
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem;
 
   display: flex;
   gap: 0.8rem;
@@ -168,6 +180,18 @@ menu p {
   font-family: var(--bricolage);
   font-size: 1rem;
   font-weight: 500;
+}
+
+.weather-widget__container { grid-area: current; }
+.hourly-forecast           { grid-area: hourly; }
+.daily-forecast            { grid-area: daily; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "weather-widget"
+    "daily-forecast"
+    "hourly-forecast";
 }
 
 /* Weather Widget section */
@@ -333,6 +357,8 @@ menu p {
   padding: 0 2rem;
 
   max-width: 800px;
+
+  order: 1;
 }
 
 .daily-forecast h2 {
