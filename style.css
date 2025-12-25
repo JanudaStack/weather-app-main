@@ -163,9 +163,12 @@ form {
   gap: 1rem;
 }
 .main-display .icon img { width: 100px; }
+
 .main-display span {
   font-size: 4rem;
-  font-weight: bold;
+  font-weight: 500;
+  font-family: var(--bricolage);
+  font-style: italic;
 }
 
 /* 2. Stats Grid */
@@ -277,6 +280,7 @@ form {
   .weather-widget__card {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 3rem;
     text-align: left;
     background-image: url("assets/images/bg-today-large.svg");
