@@ -4,430 +4,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-
   <link rel="stylesheet" href="style.css">
-
   <title>Weather Now</title>
 </head>
 
 <body>
   <header class="site-header">
     <div class="logo">
-      <img src="/assets/images/logo.svg" alt="logo">
+      <img src="./assets/images/logo.svg" alt="logo">
     </div>
-
     <menu>
-      <img src="/assets/images/icon-units.svg" alt="unit">
+      <img src="./assets/images/icon-units.svg" alt="unit">
       <p>Units</p>
-      <img src="/assets/images/icon-dropdown.svg" alt="dropdown">
+      <img src="./assets/images/icon-dropdown.svg" alt="dropdown">
     </menu>
   </header>
 
   <section class="search-section">
     <h2>How's the sky looking today?</h2>
-
     <div class="search-container">
       <form action="/search" method="get">
         <div class="search-box">
-          <img src="assets/images/icon-search.svg" alt="search"><input type="search" name="location"
-            placeholder="Search for a place...">
+          <img src="./assets/images/icon-search.svg" alt="search">
+          <input type="search" name="location" placeholder="Search for a place...">
         </div>
         <button type="submit" class="search-btn">Search</button>
       </form>
     </div>
   </section>
-  
-<div class="grid-container">
-  <section class="weather-widget">
-    <div class="weather-widget__container">
+
+  <main class="dashboard-grid">
+
+    <section class="weather-main">
       <div class="weather-widget__card">
         <div class="header">
           <h2>Berlin, Germany</h2>
           <p>Tuesday, Aug 5, 2025</p>
         </div>
-
         <div class="main-display">
           <div class="icon">
-            <img src="/assets/images/icon-sunny.webp" alt="sunny">
+            <img src="./assets/images/icon-sunny.webp" alt="sunny">
           </div>
           <span>68°</span>
         </div>
       </div>
+    </section>
 
-      <div class="data-grid">
-        <div class="data-card">
-          <p class="label">
-            Feels Like
-          </p>
-          <p class="data-value">
-            64°
-          </p>
-        </div>
-
-        <div class="data-card">
-          <p class="label">
-            Humidity
-          </p>
-          <p class="data-value">
-            46%
-          </p>
-        </div>
-
-        <div class="data-card">
-          <p class="label">
-            Wind
-          </p>
-          <p class="data-value">
-            9 mph
-          </p>
-        </div>
-
-        <div class="data-card">
-          <p class="label">
-            Precipitation
-          </p>
-          <p class="data-value">
-            0 in
-          </p>
-        </div>
+    <section class="weather-stats">
+      <div class="data-card">
+        <p class="label">Feels Like</p>
+        <p class="data-value">64°</p>
       </div>
-    </div>
+      <div class="data-card">
+        <p class="label">Humidity</p>
+        <p class="data-value">46%</p>
+      </div>
+      <div class="data-card">
+        <p class="label">Wind</p>
+        <p class="data-value">9 mph</p>
+      </div>
+      <div class="data-card">
+        <p class="label">Precipitation</p>
+        <p class="data-value">0 in</p>
+      </div>
+    </section>
 
+    <section class="daily-forecast">
+      <div class="section-header">
+        <h3>Daily forecast</h3>
+      </div>
+      <ul class="forecast-grid">
+        <li class="forecast-card">
+          <h3 class="forecast-card__day">Tue</h3>
+          <div class="forecast-card__icon"><img src="./assets/images/icon-drizzle.webp" alt="rain"></div>
+          <div class="forecast-card__temp-range">
+            <span class="high">68°</span><span class="low">57°</span>
+          </div>
+        </li>
+        <li class="forecast-card">
+          <h3 class="forecast-card__day">Wed</h3>
+          <div class="forecast-card__icon"><img src="./assets/images/icon-drizzle.webp" alt="rain"></div>
+          <div class="forecast-card__temp-range">
+            <span class="high">70°</span><span class="low">59°</span>
+          </div>
+        </li>
+        <li class="forecast-card">
+          <h3 class="forecast-card__day">Thu</h3>
+          <div class="forecast-card__icon"><img src="./assets/images/icon-sunny.webp" alt="sun"></div>
+          <div class="forecast-card__temp-range">
+            <span class="high">75°</span><span class="low">57°</span>
+          </div>
+        </li>
+        <li class="forecast-card">
+          <h3 class="forecast-card__day">Fri</h3>
+          <div class="forecast-card__icon"><img src="./assets/images/icon-sunny.webp" alt="sun"></div>
+          <div class="forecast-card__temp-range">
+            <span class="high">77°</span><span class="low">55°</span>
+          </div>
+        </li>
+        <li class="forecast-card">
+          <h3 class="forecast-card__day">Sat</h3>
+          <div class="forecast-card__icon"><img src="./assets/images/icon-sunny.webp" alt="sun"></div>
+          <div class="forecast-card__temp-range">
+            <span class="high">70°</span><span class="low">59°</span>
+          </div>
+        </li>
+        <li class="forecast-card">
+          <h3 class="forecast-card__day">Sun</h3>
+          <div class="forecast-card__icon"><img src="./assets/images/icon-drizzle.webp" alt="rain"></div>
+          <div class="forecast-card__temp-range">
+            <span class="high">77°</span><span class="low">61°</span>
+          </div>
+        </li>
+        <li class="forecast-card">
+          <h3 class="forecast-card__day">Mon</h3>
+          <div class="forecast-card__icon"><img src="./assets/images/icon-drizzle.webp" alt="rain"></div>
+          <div class="forecast-card__temp-range">
+            <span class="high">75°</span><span class="low">59°</span>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-    <div class="hourly-forecast">
+    <section class="hourly-forecast">
       <div class="hourly-forecast__header">
-        <h2>Hourly forecast</h2>
-
+        <h3>Hourly forecast</h3>
         <div class="hourly-forecast__day-selector">
           <select name="select-day" aria-label="Select forecast day">
-            <option value="monday">Monday</option>
             <option value="tuesday">Tuesday</option>
             <option value="wednesday">Wednesday</option>
-            <option value="thursday">Thursday</option>
-            <option value="friday">Friday</option>
-            <option value="saturday">Saturday</option>
-            <option value="sunday">Sunday</option>
           </select>
         </div>
       </div>
 
-
       <ul class="hourly-forecast__list">
-        <li class="hourly-forecast__item forecast-row">
-          <div class="forecast-row__icon">
-            <img src="/assets/images/icon-sunny.webp" alt="sunny">
-          </div>
-
-          <div class="forecast-row__time">
-            <span>3 PM</span>
-          </div>
-
-          <div class="forecast-row__temp">
-            <span>68°</span>
-          </div>
+        <li class="forecast-row">
+          <div class="forecast-row__icon"><img src="./assets/images/icon-sunny.webp" alt="sunny"></div>
+          <div class="forecast-row__time">3 PM</div>
+          <div class="forecast-row__temp">68°</div>
         </li>
-
-        <li class="hourly-forecast__item forecast-row">
-          <div class="forecast-row__icon">
-            <img src="/assets/images/icon-sunny.webp" alt="sunny">
-          </div>
-
-          <div class="forecast-row__time">
-            <span>3 PM</span>
-          </div>
-
-          <div class="forecast-row__temp">
-            <span>68°</span>
-          </div>
+        <li class="forecast-row">
+          <div class="forecast-row__icon"><img src="./assets/images/icon-sunny.webp" alt="sunny"></div>
+          <div class="forecast-row__time">4 PM</div>
+          <div class="forecast-row__temp">68°</div>
         </li>
-
-        <li class="hourly-forecast__item forecast-row">
-          <div class="forecast-row__icon">
-            <img src="/assets/images/icon-sunny.webp" alt="sunny">
-          </div>
-
-          <div class="forecast-row__time">
-            <span>3 PM</span>
-          </div>
-
-          <div class="forecast-row__temp">
-            <span>68°</span>
-          </div>
+        <li class="forecast-row">
+          <div class="forecast-row__icon"><img src="./assets/images/icon-sunny.webp" alt="sunny"></div>
+          <div class="forecast-row__time">5 PM</div>
+          <div class="forecast-row__temp">68°</div>
         </li>
-
-        <li class="hourly-forecast__item forecast-row">
-          <div class="forecast-row__icon">
-            <img src="/assets/images/icon-sunny.webp" alt="sunny">
-          </div>
-
-          <div class="forecast-row__time">
-            <span>3 PM</span>
-          </div>
-
-          <div class="forecast-row__temp">
-            <span>68°</span>
-          </div>
+        <li class="forecast-row">
+          <div class="forecast-row__icon"><img src="./assets/images/icon-drizzle.webp" alt="cloudy"></div>
+          <div class="forecast-row__time">6 PM</div>
+          <div class="forecast-row__temp">66°</div>
         </li>
-
-        <li class="hourly-forecast__item forecast-row">
-          <div class="forecast-row__icon">
-            <img src="/assets/images/icon-sunny.webp" alt="sunny">
-          </div>
-
-          <div class="forecast-row__time">
-            <span>3 PM</span>
-          </div>
-
-          <div class="forecast-row__temp">
-            <span>68°</span>
-          </div>
+        <li class="forecast-row">
+          <div class="forecast-row__icon"><img src="./assets/images/icon-drizzle.webp" alt="cloudy"></div>
+          <div class="forecast-row__time">7 PM</div>
+          <div class="forecast-row__temp">66°</div>
         </li>
-        
-        <li class="hourly-forecast__item forecast-row">
-          <div class="forecast-row__icon">
-            <img src="/assets/images/icon-sunny.webp" alt="sunny">
-          </div>
-
-          <div class="forecast-row__time">
-            <span>3 PM</span>
-          </div>
-
-          <div class="forecast-row__temp">
-            <span>68°</span>
-          </div>
+        <li class="forecast-row">
+          <div class="forecast-row__icon"><img src="./assets/images/icon-drizzle.webp" alt="cloudy"></div>
+          <div class="forecast-row__time">8 PM</div>
+          <div class="forecast-row__temp">64°</div>
         </li>
-
-        <li class="hourly-forecast__item forecast-row">
-          <div class="forecast-row__icon">
-            <img src="/assets/images/icon-sunny.webp" alt="sunny">
-          </div>
-
-          <div class="forecast-row__time">
-            <span>3 PM</span>
-          </div>
-
-          <div class="forecast-row__temp">
-            <span>68°</span>
-          </div>
+        <li class="forecast-row">
+          <div class="forecast-row__icon"><img src="./assets/images/icon-drizzle.webp" alt="cloudy"></div>
+          <div class="forecast-row__time">9 PM</div>
+          <div class="forecast-row__temp">63°</div>
         </li>
-
-        <li class="hourly-forecast__item forecast-row">
-          <div class="forecast-row__icon">
-            <img src="/assets/images/icon-sunny.webp" alt="sunny">
-          </div>
-
-          <div class="forecast-row__time">
-            <span>3 PM</span>
-          </div>
-
-          <div class="forecast-row__temp">
-            <span>68°</span>
-          </div>
+        <li class="forecast-row">
+          <div class="forecast-row__icon"><img src="./assets/images/icon-drizzle.webp" alt="cloudy"></div>
+          <div class="forecast-row__time">10 PM</div>
+          <div class="forecast-row__temp">63°</div>
         </li>
-
-        <li class="hourly-forecast__item forecast-row">
-          <div class="forecast-row__icon">
-            <img src="/assets/images/icon-sunny.webp" alt="sunny">
-          </div>
-
-          <div class="forecast-row__time">
-            <span>3 PM</span>
-          </div>
-
-          <div class="forecast-row__temp">
-            <span>68°</span>
-          </div>
-        </li>
-
-
       </ul>
-    </div>
+    </section>
 
-    <section class="daily-forecast">
-    <h2>Daily forecast</h2>
-
-    <ul class="forecast-grid">
-      <li class="forecast-grid__item forecast-card">
-        <h3 class="forecast-card__day">Tue</h3>
-
-        <div class="forecast-card__icon"><img src="assets/images/icon-drizzle.webp" alt="overcast"></div>
-
-        <div class="forecast-card__temp-range">
-          <span class="forecast-card__temp--high">68°</span>
-          <span class="forecast-card__temp--low">57°</span>
-        </div>
-      </li>
-
-      <li class="forecast-grid__item forecast-card">
-        <h3 class="forecast-card__day">Tue</h3>
-
-        <div class="forecast-card__icon"><img src="assets/images/icon-drizzle.webp" alt="overcast"></div>
-
-        <div class="forecast-card__temp-range">
-          <span class="forecast-card__temp--high">68°</span>
-          <span class="forecast-card__temp--low">57°</span>
-        </div>
-      </li>
-
-      <li class="forecast-grid__item forecast-card">
-        <h3 class="forecast-card__day">Tue</h3>
-
-        <div class="forecast-card__icon"><img src="assets/images/icon-drizzle.webp" alt="overcast"></div>
-
-        <div class="forecast-card__temp-range">
-          <span class="forecast-card__temp--high">68°</span>
-          <span class="forecast-card__temp--low">57°</span>
-        </div>
-      </li>
-
-      <li class="forecast-grid__item forecast-card">
-        <h3 class="forecast-card__day">Tue</h3>
-
-        <div class="forecast-card__icon"><img src="assets/images/icon-drizzle.webp" alt="overcast"></div>
-
-        <div class="forecast-card__temp-range">
-          <span class="forecast-card__temp--high">68°</span>
-          <span class="forecast-card__temp--low">57°</span>
-        </div>
-      </li>
-
-      <li class="forecast-grid__item forecast-card">
-        <h3 class="forecast-card__day">Tue</h3>
-
-        <div class="forecast-card__icon"><img src="assets/images/icon-drizzle.webp" alt="overcast"></div>
-
-        <div class="forecast-card__temp-range">
-          <span class="forecast-card__temp--high">68°</span>
-          <span class="forecast-card__temp--low">57°</span>
-        </div>
-      </li>
-
-      <li class="forecast-grid__item forecast-card">
-        <h3 class="forecast-card__day">Tue</h3>
-
-        <div class="forecast-card__icon"><img src="assets/images/icon-drizzle.webp" alt="overcast"></div>
-
-        <div class="forecast-card__temp-range">
-          <span class="forecast-card__temp--high">68°</span>
-          <span class="forecast-card__temp--low">57°</span>
-        </div>
-      </li>
-
-      <li class="forecast-grid__item forecast-card">
-        <h3 class="forecast-card__day">Tue</h3>
-
-        <div class="forecast-card__icon"><img src="assets/images/icon-drizzle.webp" alt="overcast"></div>
-
-        <div class="forecast-card__temp-range">
-          <span class="forecast-card__temp--high">68°</span>
-          <span class="forecast-card__temp--low">57°</span>
-        </div>
-      </li>
-      </div>
-    </ul>
-  </section>
-  </section>
-</div>
-  
-
-  
-
-  <!-- <section class="hourly-forecast">
-    <h2>Hourly forecast</h2>
-
-    <div class="hourly-forecast__day-selector">
-      <select name="select-day" aria-label="Select forecast day">
-        <option value="tuesday">Monday</option>
-        <option value="tuesday">Tuesday</option>
-        <option value="tuesday">Wednesday</option>
-        <option value="tuesday">Thursday</option>
-        <option value="tuesday">Friday</option>
-        <option value="tuesday">Saturday</option>
-        <option value="tuesday">Sunday</option>
-      </select>
-    </div>
-
-    <ul class="hourly-forecast__list">
-      <li class="hourly-forecast__item forecast-row">
-        <div class="forecast-row__icon">
-          <img src="/assets/images/icon-sunny.webp" alt="sunny">
-        </div>
-
-        <div class="forecast-row__time">3 PM</div>
-
-        <div class="forecast-row__temp">68°</div>
-      </li>
-
-      <li class="hourly-forecast__item forecast-row">
-        <div class="forecast-row__icon">
-          <img src="/assets/images/icon-sunny.webp" alt="sunny">
-        </div>
-
-        <div class="forecast-row__time">3 PM</div>
-
-        <div class="forecast-row__temp">68°</div>
-      </li>
-
-      <li class="hourly-forecast__item forecast-row">
-        <div class="forecast-row__icon">
-          <img src="/assets/images/icon-sunny.webp" alt="sunny">
-        </div>
-
-        <div class="forecast-row__time">3 PM</div>
-
-        <div class="forecast-row__temp">68°</div>
-      </li>
-
-      <li class="hourly-forecast__item forecast-row">
-        <div class="forecast-row__icon">
-          <img src="/assets/images/icon-sunny.webp" alt="sunny">
-        </div>
-
-        <div class="forecast-row__time">3 PM</div>
-
-        <div class="forecast-row__temp">68°</div>
-      </li>
-
-      <li class="hourly-forecast__item forecast-row">
-        <div class="forecast-row__icon">
-          <img src="/assets/images/icon-sunny.webp" alt="sunny">
-        </div>
-
-        <div class="forecast-row__time">3 PM</div>
-
-        <div class="forecast-row__temp">68°</div>
-      </li>
-
-      <li class="hourly-forecast__item forecast-row">
-        <div class="forecast-row__icon">
-          <img src="/assets/images/icon-sunny.webp" alt="sunny">
-        </div>
-
-        <div class="forecast-row__time">3 PM</div>
-
-        <div class="forecast-row__temp">68°</div>
-      </li>
-
-      <li class="hourly-forecast__item forecast-row">
-        <div class="forecast-row__icon">
-          <img src="/assets/images/icon-sunny.webp" alt="sunny">
-        </div>
-
-        <div class="forecast-row__time">3 PM</div>
-
-        <div class="forecast-row__temp">68°</div>
-      </li>
-    </ul>
-
-  </section> -->
-
+  </main>
 </body>
-
 </html>
