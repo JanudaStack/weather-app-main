@@ -21,6 +21,9 @@ const precipVal = document.querySelector(".data-card:nth-child(4) .data-value");
 // Daily forecast
 const dailyContainer = document.querySelector(".forecast-grid");
 
+// Hourly forecast
+const hourlyContainer = document.querySelector(".hourly-forecast__list");
+
 searchForm.addEventListener("submit", function(e) {
     e.preventDefault();
     // console.log("Search value:", searchBox.value);
@@ -89,5 +92,35 @@ function updateUI(data) {
         `;
 
         dailyContainer.innerHTML += html;
+    });
+
+    // Hourly forecast update
+    const currentHour = new Date().getHours(); // Get current hour
+
+    hourlyContainer.innerHTML = ""; // Clear old data
+
+    const hourlyData = data.forecast.forecastday[0].hour;
+
+    hourlyData.forEach((hourObj) => {
+        const time = new Date(hourObj.time);
+        const hourNumber = time.getHours();
+
+        if (hourNumber > currentHour) {
+            const html = `
+                <li class="forecast-row">
+                    <div class="forecast-row__icon">
+                        <img src="https:${hourObj.condition.icon}" alt="weather icon">
+                    </div>
+                    <div class="forecast-row__time">
+                        ${time.toLocaleTimeString("en-US", { hour: "numeric", hour12: true })}
+                    </div>
+                    <div class="forecast-row__temp">
+                        ${Math.round(hourObj.temp_f)}°
+                    </div>
+                </li>
+            `;
+
+            hourlyContainer.innerHTML += html;
+        }
     })
 }
