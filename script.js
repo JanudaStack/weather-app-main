@@ -12,6 +12,15 @@ const dateLabel = document.querySelector(".weather-widget__card p");
 const tempLabel = document.querySelector(".main-display span");
 const iconImage = document.querySelector(".main-display .icon img");
 
+// Stats card
+const feelsLikeVal = document.querySelector(".data-card:nth-child(1) .data-value");
+const humidityVal = document.querySelector(".data-card:nth-child(2) .data-value");
+const windVal = document.querySelector(".data-card:nth-child(3) .data-value");
+const precipVal = document.querySelector(".data-card:nth-child(4) .data-value");
+
+// Daily forecast
+const dailyContainer = document.querySelector(".forecast-grid");
+
 searchForm.addEventListener("submit", function(e) {
     e.preventDefault();
     // console.log("Search value:", searchBox.value);
@@ -39,12 +48,46 @@ async function fetchWeatherData(city) {
 }
 
 function updateUI(data) {
+    // Widget card update
     cityLabel.innerText = `${data.location.name}, ${data.location.country}`;
 
     const date = new Date(data.location.localtime);
-    dateLabel.innerText = `${Math.round(data.current.temp_f)}°`;
-
+    
+    dateLabel.innerText = date.toDateString();
+    tempLabel.innerText = `${Math.round(data.current.temp_f)}°`;
     iconImage.src = `https.${data.current.condition.icon}`;
-
     iconImage.alt = data.current.condition.text;
+
+    // Stats card update
+    feelsLikeVal.innerText = `${Math.round(data.current.feelslike_f)}`;
+    humidityVal.innerText = `${data.current.humidity}%`;
+    windVal.innerText = `${data.current.wind_mph} mph`;
+    precipVal.innerText = `${data.current.precip_in} in`;
+
+    // Daily forecast update
+    dailyContainer.innerHTML = "";
+
+    const dailyData = data.forecast.forecastday;
+
+    dailyData.forEach((dayData) => {
+        const date = new Date(dayData.date);
+        const dayName = date.toLocaleDateString("en-US", { weekday: "short" });
+
+        const html = `
+        <li class="forecast-card">
+            <h3 class="forecast-card__day">${dayName}</h3>
+        
+            <div class="forecast-card__icon">
+                <img src="https:${dayData.day.condition.icon}" alt="weather icon">
+            </div>
+
+            <div class="forecast-card__temp-range">
+                <span class="forecast-card__temp--high">${Math.round(dayData.day.maxtemp_f)}°</span>
+                <span class="forecast-card__temp--low">${Math.round(dayData.day.mintemp_f)}°</span>
+            </div>
+        </li>
+        `;
+
+        dailyContainer.innerHTML += html;
+    })
 }
