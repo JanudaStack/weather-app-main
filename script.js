@@ -39,6 +39,11 @@ async function fetchWeatherData(city) {
     try {
         const response = await fetch(url);
 
+        if (!response.ok) {
+            alert("Please enter correct city!");
+            throw new Error("City not found!");
+        }
+
         const data = await response.json();
 
         updateUI(data);
@@ -46,7 +51,7 @@ async function fetchWeatherData(city) {
         console.log(data);
 
     } catch (error) {
-        console.log("Failed to fetch API. Error: ", error);        
+        console.log("Failed to fetch API.", error);        
     }
 }
 
