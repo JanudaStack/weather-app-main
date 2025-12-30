@@ -7,6 +7,8 @@ console.log("Connected");
 const searchForm = document.querySelector("form"); 
 const searchBox = document.querySelector("input");
 
+const locationBtn = document.querySelector(".location-btn");
+
 const cityLabel = document.querySelector(".weather-widget__card h2");
 const dateLabel = document.querySelector(".weather-widget__card p");
 const tempLabel = document.querySelector(".main-display span");
@@ -32,6 +34,27 @@ searchForm.addEventListener("submit", function(e) {
 
     fetchWeatherData(city);
 });
+
+locationBtn.addEventListener("click", () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    } else {
+        alert("Browser is not support for Geo Location");
+    }
+});
+
+function onSuccess(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+
+    const coordinates = `${lat},${lon}`;
+
+    fetchWeatherData(coordinates);
+}
+
+function onError(error) {
+    alert("Can't get the location: " + error.message);
+}
 
 async function fetchWeatherData(city) {
     const url = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=7&aqi=no&alerts=no`;
