@@ -54,6 +54,7 @@ function onSuccess(position) {
 
 function onError(error) {
     alert("Can't get the location: " + error.message);
+    console.log("Error: ", error);
 }
 
 async function fetchWeatherData(city) {
