@@ -299,3 +299,21 @@ form {
     height: 100%;
   }
 }
+
+/* --- Dynamic Backgrounds --- */
+
+/* 1. Night Mode (Raa wela nam) */
+.card-night {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364) !important;
+  color: #fff;
+}
+
+/* 2. Rainy Mode (Wassa nam) */
+.card-rain {
+  background: linear-gradient(135deg, #373B44, #4286f4) !important;
+}
+
+/* 3. Sunny/Clear Mode (Default Day) */
+.card-sunny {
+  background: linear-gradient(135deg, #2980B9, #6DD5FA) !important;
+}

@@ -153,3 +153,34 @@ function updateUI(data) {
         }
     })
 }
+
+function updateBackground(data) {
+  const card = document.querySelector(".weather-widget__card");
+  
+  // 1. Weather condition eka gannawa (Simple letters walata harawala)
+  // 'toLowerCase()' danne 'Sunny' saha 'sunny' kiyana deka ekak widiyata ganna.
+  const condition = data.current.condition.text.toLowerCase();
+  
+  // 2. Dawalada Raada kiyana eka (1 = Day, 0 = Night)
+  const isDay = data.current.is_day;
+
+  // 3. Classes Reset karanna (Parana ewa ain karanna)
+  // Api 'weather-widget__card' kiyana main class eka ithuru karala anithwa ain karanawa
+  card.className = "weather-widget__card"; 
+
+  // --- LOGIC TREE ---
+  
+  if (isDay === 0) {
+    // A. Raa wela nam (Night)
+    card.classList.add("card-night");
+    
+  } else if (condition.includes("rain") || condition.includes("drizzle") || condition.includes("storm")) {
+    // B. Dawala habai Wassa (Rain/Storm)
+    // 'includes' kiyanne: 'Patchy rain' kiwwath, 'Heavy rain' kiwwath allagannawa.
+    card.classList.add("card-rain");
+    
+  } else {
+    // C. Anith hama welawema (Sunny/Cloudy)
+    card.classList.add("card-sunny");
+  }
+}
